@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+        .roboto-serif-heading {
+        font-family: "Roboto Serif", serif;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100,
+            "GRAD" 0;
+        }
+    </style>
+  </head>
+  <body>
+    
+    <!-- Adding navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand roboto-serif-heading" href="#">PDF Merger</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Theme
+                </a>
+                <ul class="dropdown-menu">
+                  <li id="light"><a class="dropdown-item" href="#">Default</a></li>
+                  <li id="dark"><a class="dropdown-item" href="#">Dark</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+
+
+
+
+
+    <div class="container ny-3">
+        <form action="/merge" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="formFile" class="form-label">First pdf</label>
+            <input class="form-control" type="file" name="pdf1" id="formFile">
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Second pdf</label>
+            <input class="form-control" type="file" name="pdf2" id="formFile">
+          </div>
+          <input class="btn btn-primary my-4" type="submit" value="Submit">
+        </form>
+          
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('light').addEventListener('click', ()=>{
+    console.log("I am clicked")
+})
+
+document.getElementById('dark').addEventListener('click', ()=>{
+    console.log("Clicked")
+    document.documentElement.setAttribute('data-bs-theme','dark')
+})
+</script>
+  </body>
+</html>
